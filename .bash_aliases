@@ -25,7 +25,21 @@ alias sproject='cd $SPROJECT'
 # access rights)
 if [ -f ~/.bash_ids ]; then
 	. ~/.bash_ids
+    # HPC 12
     alias hpc12='ssh $HPC12_USER@hpc12.tudelft.net'
+    # Eagle external connection
     alias eagle='ssh $EAGLE_USER@eagle.nrel.gov'
     alias edav='ssh $EAGLE_USER@eagle-dav.nrel.gov'
+    # Eagle internal connection
+    alias el='ssh -Y $EAGLE_USER@eagle.hpc.nrel.gov'
+    alias el1='ssh -Y $EAGLE_USER@el1.hpc.nrel.gov'
+    alias el2='ssh -Y $EAGLE_USER@el2.hpc.nrel.gov'
+    alias el3='ssh -Y $EAGLE_USER@el3.hpc.nrel.gov'
+    alias ed='ssh -Y $EAGLE_USER@eagle-dav.hpc.nrel.gov'
+    alias ed1='ssh -Y $EAGLE_USER@ed1.hpc.nrel.gov'
+    alias ed2='ssh -Y $EAGLE_USER@ed2.hpc.nrel.gov'
+    alias ed3='ssh -Y $EAGLE_USER@ed3.hpc.nrel.gov'
+    alias ed4='ssh -Y $EAGLE_USER@ed4.hpc.nrel.gov'
+    alias ed5='ssh -Y $EAGLE_USER@ed5.hpc.nrel.gov'
+    alias ed6='ssh -Y $EAGLE_USER@ed6.hpc.nrel.gov'
 fi
