@@ -1,0 +1,41 @@
+#!/bin/bash
+SOWFA-6-env()
+{
+   # Set the OpenFOAM version and installation directory
+   export OPENFOAM_VERSION=6
+   export OPENFOAM_NAME=OpenFOAM-$OPENFOAM_VERSION
+   export WM_PROJECT_USER_DIR=/home/openfoam/dallaerts-$OPENFOAM_VERSION
+   export FOAMY_HEX_MESH=true
+   
+   # For wmake compiling.
+   export WM_NCOMPPROCS=24
+   export WM_COLOURS="white blue green cyan red magenta yellow"
+
+   # Set the SOWFA installation directory.
+   if [ $# == 0 ]; then
+       export SOWFA_NAME=dev
+   else
+       export SOWFA_NAME=$1
+   fi
+
+   # Set the SOWFA installation directory.
+   export SOWFA_DIR=/home/openfoam/SOWFA-$OPENFOAM_VERSION-$SOWFA_NAME
+
+
+   if [[ "$SOWFA_NAME" == "jsteiner" ]]; then
+       export LD_LIBRARY_PATH=$SOWFA_DIR/lib/$WM_OPTIONS:$OPENFAST_DIR/lib:$LD_LIBRARY_PATH
+       export PATH=$SOWFA_DIR/applications/bin/$WM_OPTIONS:$PATH
+       export LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBRARY_PATH
+   else
+      export SOWFA_APPBIN=$SOWFA_DIR/platforms/$WM_OPTIONS/bin
+      export SOWFA_LIBBIN=$SOWFA_DIR/platforms/$WM_OPTIONS/lib 
+      export LD_LIBRARY_PATH=$SOWFA_LIBBIN:$LD_LIBRARY_PATH
+      export PATH=$SOWFA_APPBIN:$PATH
+   fi
+
+   if [ ! -d $SOWFA_DIR ]; then
+        echo "Warning: SOWFA directory $SOWFA_DIR not found"
+   else
+        echo "Using SOWFA distribution in $SOWFA_DIR"
+   fi
+}
