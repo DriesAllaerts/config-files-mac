@@ -16,8 +16,13 @@ alias ju='jupyter notebook'
 
 export SHOME=$HOME/surfdrive/Documents/TU_Delft/
 export SPROJECT=$SHOME/Projects
+export TPROJECT="/Volumes/SFTP TU Delft/staff-umbrella/SWiFT"
 alias shome='cd $SHOME'
 alias sproject='cd $SPROJECT'
+alias tproject='cd "$TPROJECT"'
+
+#Launch certain applications from terminal
+alias inkscape="/Applications/Inkscape.app/Contents/MacOs/Inkscape"
 
 # Aliases to access remote HPC clusters
 # .bash_ids needs to be decrypted

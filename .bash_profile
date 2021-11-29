@@ -32,6 +32,9 @@ export BLOCKSIZE=1k # Set default blocksize for ls, df, du, from this: http://hi
 # Add binaries installed by homebrew to path
 export PATH="/Users/dallaerts/opt/homebrew/bin:$PATH"
 
+# Add custom binaries to path
+export PATH="/Users/dallaerts/bin:$PATH"
+
 # Add python repositories to PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:~/pylibs/a2e-mmc
 export PYTHONPATH=$PYTHONPATH:~/pylibs/nrel
