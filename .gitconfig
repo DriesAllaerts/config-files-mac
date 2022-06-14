@@ -19,3 +19,7 @@
     lg = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h%d %s - %an (%ar)' --all --color
     rmv = remote -v
     alias = config --get-regexp ^alias\\.
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
