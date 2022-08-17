@@ -48,3 +48,8 @@ if [ -f ~/.bash_ids ]; then
     alias ed5='ssh -Y $EAGLE_USER@ed5.hpc.nrel.gov'
     alias ed6='ssh -Y $EAGLE_USER@ed6.hpc.nrel.gov'
 fi
+
+# Aliases to launch openfoam on mac
+alias mountfoam='openfoam-macos-file-system -v foamDrive mount'
+alias unmountfoam='openfoam-macos-file-system -v foamDrive unmount'
+alias hifoam10='openfoam10-macos'
