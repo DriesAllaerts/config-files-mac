@@ -14,12 +14,14 @@ alias hipy='conda activate py3env'
 alias byepy='conda deactivate'
 alias ju='jupyter notebook'
 
-export SHOME=$HOME/surfdrive/Documents/TU_Delft/
+export SHOME=$HOME/surfdrive/Documents/TU_Delft
 export SPROJECT=$SHOME/Projects
 export TPROJECT="/Volumes/SFTP TU Delft/staff-umbrella/SWiFT"
 alias shome='cd $SHOME'
 alias sproject='cd $SPROJECT'
 alias tproject='cd "$TPROJECT"'
+alias ae4w30='cd $SHOME/Education/AE4W30\ Wind\ Resource\ and\ Wind\ Farm\ Yield'
+alias ae4w13='cd $SHOME/Education/AE4W13\ Site\ Conditions\ for\ Wind\ Turbine\ Design'
 
 #Launch certain applications from terminal
 alias inkscape="/Applications/Inkscape.app/Contents/MacOs/Inkscape"
@@ -32,6 +34,8 @@ if [ -f ~/.bash_ids ]; then
 	. ~/.bash_ids
     # HPC 12
     alias hpc12='ssh $HPC12_USER@hpc12.tudelft.net'
+    # DelftBlue
+    alias blue='ssh $DELFTBLUE_USER@login.delftblue.tudelft.nl'
     # Eagle external connection
     alias eagle='ssh $EAGLE_USER@eagle.nrel.gov'
     alias edav='ssh $EAGLE_USER@eagle-dav.nrel.gov'
@@ -53,3 +57,6 @@ fi
 alias mountfoam='openfoam-macos-file-system -v foamDrive mount'
 alias unmountfoam='openfoam-macos-file-system -v foamDrive unmount'
 alias hifoam10='openfoam10-macos'
+
+# Mount TU Delft Web Drives
+alias mount-umbrella='sshfs $NETID@sftp.tudelft.nl:/staff-umbrella/ $HOME/webdrive/umbrella -ovolname=umbrella'

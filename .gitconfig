@@ -3,6 +3,7 @@
     name = Dries Allaerts
 [push]
     default = simple
+	autoSetupRemote = true
 [core]
     fileMode = false
     editor = vim

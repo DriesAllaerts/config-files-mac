@@ -24,6 +24,11 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
+# Enable git autocompletion on command line
+# Check https://apple.stackexchange.com/questions/55875/git-auto-complete-for-branches-at-the-command-line
+[ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] \
+    && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+
 # Configure the shell environment
 export PS1=': \u@\[\e[1;31m\]\h\[\e[0m\] \w `date +%H:%M` $ '
 export EDITOR=/usr/bin/vim
@@ -34,6 +39,7 @@ export PATH="/Users/dallaerts/opt/homebrew/bin:$PATH"
 
 # Add custom binaries to path
 export PATH="/Users/dallaerts/bin:$PATH"
+export PATH="/Users/dallaerts/pylibs/dallaerts/foamscripts:$PATH"
 
 # Add python repositories to PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:~/pylibs/a2e-mmc
